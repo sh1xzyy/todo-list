@@ -3,10 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./main.js" type="module"></script>
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <form class="search-form">
+          <input
+            type="text"
+            name="searchNode"
+            placeholder="Search"
+            id="searchNode"
+          />
+          <button class="search-btn" type="submit" id="searchNodeBtn">
+            Search
+          </button>
+        </form>
+        <div class="header-btns">
+          <button class="delete-all-btn" id="deleteAllNodeBtn" type="button">
+            Delete All
+          </button>
+          <button class="add-node-btn" id="addNodeBtn" type="button">
+            Add Node
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="nodes">
+      <div class="container">
+        <h2 class="nodes-title">Nodes</h2>
+        <ul class="nodes-list"></ul>
+      </div>
+    </section>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <button type="button" class="modal-close-btn" id="modalCloseBtn">
+          x
+        </button>
+        <form class="modal-form">
+          <label class="modal-node-label" for="nodeInput">Title</label>
+          <input
+            class="modal-node-input"
+            type="text"
+            name="nodeInput"
+            id="nodeInput"
+          />
+          <label class="modal-node-label" for="nodeTextarea">Description</label>
+          <textarea
+            class="modal-node-textarea"
+            name="nodeTextarea"
+            id="nodeTextarea"
+          ></textarea>
+          <button class="modal-save-node" type="submit" id="saveNode">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="loader"></div>
   </body>
 </html>
