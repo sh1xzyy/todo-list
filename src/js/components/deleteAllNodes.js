@@ -1,7 +1,7 @@
 import { getAllNodes } from "../utils/localeStorage"
 import { addLoader, removeLoader } from "./loader"
+import { showErrorMessage, showSuccessMessage } from "./showMessage"
 import { renderNodes } from "./render-markup"
-import { showErrorMessage } from "./showMessage"
 
 export const deleteAllNodes = () => {
     const nodes = getAllNodes("userNodes")
@@ -13,6 +13,7 @@ export const deleteAllNodes = () => {
     setTimeout(() => {
         localStorage.removeItem("userNodes")
         renderNodes(getAllNodes("userNodes"))
+        showSuccessMessage("You have successfully deleted all nodes!")
         removeLoader()
     }, 200)
 }

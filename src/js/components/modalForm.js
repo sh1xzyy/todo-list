@@ -1,8 +1,8 @@
-import { addNewNode, getAllNodes } from "../utils/localeStorage";
 import { showSuccessMessage, showWarningMessage } from "./showMessage";
-import { renderNodes } from "./render-markup";
-import { refs } from "../utils/refs";
+import { addNewNode, getAllNodes } from "../utils/localeStorage";
 import { addLoader, removeLoader } from "./loader";
+import { renderNodes } from "./render-markup";
+import { closeModal } from "./modalClose";
 
 export const onModalFormSubmit = (event) => {
     event.preventDefault()
@@ -35,28 +35,5 @@ export const onModalFormSubmit = (event) => {
       removeLoader()
     }, 200)
     
-    closeModal();
-    event.currentTarget.reset()
-    refs.modalOverlay.removeEventListener("click", modalOverlayClose)
-    refs.modalForm.removeEventListener("submit", onModalFormSubmit)
-    document.removeEventListener("keydown", onHandleEscapeKey)
+    closeModal()
 }
-
-export const modalOverlayClose = event => {
-    if (event.target === event.currentTarget) {
-      closeModal();
-    }
-    if (event.target.matches('#modalCloseBtn')) {
-      closeModal();
-    }
-};
-  
-export const onHandleEscapeKey = event => {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-};
-  
-const closeModal = () => {
-    refs.modalOverlay.classList.remove('is-open');
-};

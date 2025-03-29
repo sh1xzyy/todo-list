@@ -1,5 +1,6 @@
 import { addNewNode, getAllNodes } from "../utils/localeStorage"
 import { addLoader, removeLoader } from "./loader"
+import { showSuccessMessage } from "./showMessage"
 import { renderNodes } from "./render-markup"
 
 export const deleteNode = (nodeId) => {
@@ -10,6 +11,7 @@ export const deleteNode = (nodeId) => {
     setTimeout(() => {
         addNewNode("userNodes", filteredNodes)
         renderNodes(filteredNodes)
+        showSuccessMessage("You have delete a node!")
         removeLoader()
     }, 200)
 }
