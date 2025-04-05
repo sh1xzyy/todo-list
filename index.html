@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="description"
+      content="ToDo List - a simple and intuitive note-taking application that allows you to add, edit, delete, and search for notes. All data is saved in localStorage."
+    />
+    <meta
+      name="keywords"
+      content="to do list, note taking app, notes, task manager, note app, free notes, JavaScript to do list, note organizer, productivity app, add note, delete note, search notes"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="shortcut icon" href="/todo-list/assets/favicon-BiJZTnRG.jpg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/todo-list/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/todo-list/assets/vendor-iVKk4foX.js">
+    <link rel="stylesheet" crossorigin href="/todo-list/assets/index-DoEcsYb8.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <form class="search-form">
+          <input
+            class="header-form-input"
+            type="text"
+            name="searchNode"
+            placeholder="Search"
+            id="searchNode"
+          />
+          <button
+            class="search-btn"
+            type="submit"
+            id="searchNodeBtn"
+            aria-label="Search nodes by name button"
+            title="Search nodes by name"
+          >
+            <svg class="search-btn-svg" width="16" height="16">
+              <use href="/todo-list/assets/icons-Dqlllzcg.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+
+        <div class="header-btns">
+          <button
+            class="delete-all-btn"
+            id="deleteAllNodeBtn"
+            type="button"
+            aria-label="Delete all nodes button"
+            title="Delete All Nodes"
+          >
+            <svg width="20" height="20">
+              <use href="/todo-list/assets/icons-Dqlllzcg.svg#icon-bin"></use>
+            </svg>
+          </button>
+          <button
+            class="add-node-btn"
+            id="addNodeBtn"
+            type="button"
+            aria-label="Add new node button"
+            title="Add new node"
+          >
+            <svg width="20" height="20">
+              <use href="/todo-list/assets/icons-Dqlllzcg.svg#icon-folder"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="nodes">
+        <div class="container">
+          <h2 class="nodes-title">Nodes</h2>
+          <ul class="nodes-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-overlay">
+      <div class="container">
+        <div class="modal">
+          <button
+            type="button"
+            class="modal-close-btn"
+            id="modalCloseBtn"
+            aria-label="close modal button"
+            title="Close Modal"
+          >
+            <svg width="20" height="20">
+              <use href="/todo-list/assets/icons-Dqlllzcg.svg#icon-cancel-circle"></use>
+            </svg>
+          </button>
+
+          <form class="modal-form">
+            <label class="modal-node-label" for="nodeInput">Title</label>
+            <input
+              class="modal-node-input"
+              type="text"
+              name="nodeInput"
+              id="nodeInput"
+            />
+            <label class="modal-node-label" for="nodeTextarea"
+              >Description</label
+            >
+            <textarea
+              class="modal-node-textarea"
+              name="nodeTextarea"
+              id="nodeTextarea"
+            ></textarea>
+            <button
+              class="modal-save-node"
+              type="submit"
+              id="saveNode"
+              aria-label="Save Node"
+            >
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="loader"></div>
+  </body>
+</html>
