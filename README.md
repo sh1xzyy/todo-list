@@ -1,11 +1,11 @@
 📝 Project Description
 This todo-list allows users to:
 
-➕ Add notes
-✏️ Edit notes
-❌ Delete notes
-🔍 Search notes
-🗑️ Delete all notes at once
+* Add notes ➕
+* Edit notes ✏️
+* Delete notes ❌
+* Search notes 🔍
+* Delete all notes at once 🗑️
 
 ⚙️ Technologies
 The project was built using:
