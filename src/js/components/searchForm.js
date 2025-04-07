@@ -17,8 +17,8 @@ export const onSearchFormSubmit = event => {
     return;
   }
 
-  const userUniqueNodes = getNodes('userNodes').filter(
-    node => node.title === inputValue
+  const userUniqueNodes = getNodes('userNodes').filter(node =>
+    node.title.toLowerCase().includes(inputValue.toLowerCase())
   );
 
   if (!userUniqueNodes.length) {

@@ -13,6 +13,7 @@ import { renderNodes } from './js/components/render-markup';
 import { deleteNode } from './js/components/deleteNode';
 import { getNodes } from './js/utils/localeStorage';
 import { refs } from './js/utils/refs';
+import { onSearchFormInput } from './js/components/searchFormInput';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNodes(getNodes('userNodes'));
@@ -57,4 +58,5 @@ const onNodeButtonsClick = ({ target }) => {
 
 refs.nodesList.addEventListener('click', onNodeButtonsClick);
 refs.searchForm.addEventListener('submit', onSearchFormSubmit);
+refs.searchNode.addEventListener('input', onSearchFormInput);
 refs.headerButtons.addEventListener('click', onHeaderBtnsClick);
